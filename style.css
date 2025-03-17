@@ -1,0 +1,810 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins:wght@300&display=swap');
+
+.combos{
+    align-items: center;
+    margin: 20px;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*//*NAVBAR*/
+
+#navbar{
+    position: absolute;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#navbar{
+    font-family: 'Poppins', sans-serif;
+}
+
+#navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links a{
+    font-size: 1.1rem;
+}
+
+#navbar .logo{
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+#navbar .nav-links ul{
+    display: flex;
+}
+
+#navbar .nav-links ul li{
+    margin: 0 15px;
+}
+
+#navbar .nav-links ul .separador{
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+#navbar .menu-hamburger{
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    width: 25px;
+}
+
+#navbar .nav-links .bandera{
+    width: 25px;
+    margin-right: 5px;
+}
+
+#navbar .lognav{
+    height: 1.6rem;
+    position: absolute;
+    top: 48px;
+    left: 30px;
+}
+
+#navbar .logo{
+    position: absolute;
+    top: 37px;
+    left: 60px;
+}
+
+#navbar .flechadest{
+    position: absolute;
+    margin-left: 47%;
+    top: 700px;
+}
+
+.nav-links{
+    width: 100%;
+    right: auto;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+@media screen and (max-width: 720px) {
+
+    #navbar{
+        padding: 0;
+    }
+
+    #navbar .logo{
+        position: absolute;
+        top: 37px;
+        left: 60px;
+    }
+
+    #navbar .menu-hamburger{
+        display: block;
+    }
+
+    .nav-links a{
+        font-size: 1.3rem;
+    }
+
+    .nav-links{
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(172, 169, 169, 0.4);
+        /*background-color: rgba(255, 255, 255, 0.30);*/
+        -webkit-backdrop-filter: blur(7px); /*Esta linea y la de abajo van igual, la de arriba es para ios*/
+        backdrop-filter: blur(7px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.mobile-menu{
+        margin-left: 0;
+    }
+    
+
+    .nav-links ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #navbar .nav-links ul li{
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+
+    #navbar .nav-links .bandera{
+        width: 35px;
+        height: 32px;
+        margin-right: 5px;
+    }
+
+    #navbar .nav-links .separador{
+        visibility:hidden;
+    }
+}
+
+/*SPAN-IDIOMA*//*SPAN-IDIOMA*//*SPAN-IDIOMA*//*SPAN-IDIOMA*//*SPAN-IDIOMA*/
+
+#navbar .bandera{
+    border: 50%;
+    height: 1.2rem;
+    width: 2rem;
+}
+
+/*HEADER*//*HEADER*//*HEADER*//*HEADER*//*HEADER*/
+
+header{
+    height: 100vh;
+    background-size: cover;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/fondo2.jpg);
+}
+
+header .titulo h1{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    flex-direction: column;
+    padding: 180px 12px;
+    height: 100vh;
+}
+
+/*NUESTROS-PROGRAMAS*//*NUESTROS-PROGRAMAS*//*NUESTROS-PROGRAMAS*/
+
+#nuestros-programas{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    transition: .2s linear;
+}
+
+#nuestros-programas{
+    background-color: #333;
+    padding:15px 9%;
+    padding-bottom: 100px;
+    width: 100%;
+}
+
+#nuestros-programas .heading{
+    text-align: center;
+    padding-bottom: 15px;
+    color:#fff;
+    text-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-size: 40px;
+}
+
+#nuestros-programas .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+#nuestros-programas .modal-footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+#nuestros-programas .box-container .box-01{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/aer.png);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-02{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/aerbr.png);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-1{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/cataratas\ brasileras.jpeg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-2{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/cataratas.png);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-3{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/gran\ aventura.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-4{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/parque\ de\ las\ aves.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-5{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/paseo\ en\ helicoptero.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-6{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/ciudad\ del\ este.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-7{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/represa\ itaipu.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-8{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/minas\ de\ wanda.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-9{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/restaurante\ rafain.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+#nuestros-programas .box-container .box-10{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 5px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.3),
+        rgba(0,0,0,0.3)
+    ) 
+    ,url(img/ruinas\ de\ san\ ignacio.jpg);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding:30px 20px;
+    transition: transform 0.6s ease;
+}
+
+
+#nuestros-programas .box-container .box-01 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-02 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-1 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-2 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-3 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-4 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-5 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-6 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-7 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-8 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-9 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+#nuestros-programas .box-container .box-10 h3{
+    color:#fff;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+
+#nuestros-programas .box-container .box-01 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-02 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+
+#nuestros-programas .box-container .box-1 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+
+#nuestros-programas .box-container .box-2 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-3 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-4 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-5 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-6 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-7 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-8 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-9 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-10 button{
+    background-color: #333;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+#nuestros-programas .box-container .box-01:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-02:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-1:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-2:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-3:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-4:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-5:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-6:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-7:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .box-8:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-7px);
+}
+
+#nuestros-programas .box-container .box-9:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+#nuestros-programas .box-container .box-10:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: translateY(-6px);
+}
+
+#nuestros-programas .box-container .modal-body .list-item{
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px){
+    .container{
+        padding:20px;
+    }
+}
+
+/*VIAJE SEGURO*//*VIAJE SEGURO*//*VIAJE SEGURO*//*VIAJE SEGURO*/
+
+#viaje-seguro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 180px 12px;
+    background-image: linear-gradient( 
+        0deg, 
+        rgba(0,0,0,0.3), 
+        rgba(0,0,0,0.3)) 
+        ,url(img/viaje.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 450px;
+}
+
+#viaje-seguro{
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*PIE DE PAGINA*//*PIE DE PAGINA*//*PIE DE PAGINA*//*PIE DE PAGINA*/
+
+#pie-pagina{
+    width: 100%;
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#pie-pagina .grupo-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+
+#pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+#pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+#pie-pagina .grupo-2{
+    background-color: rgb(4, 4, 4);
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+#pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+#pie-pagina .bernidesign{
+    text-decoration: none;
+}
+
+@media screen and (max-width:720px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+
+/*BOTON FLOTANTE*//*BOTON FLOTANTE*//*BOTON FLOTANTE*//*BOTON FLOTANTE*/
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:20px;
+	right:20px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+    font-size:30px;
+	box-shadow: 1px 1px 2px #999;
+    z-index:100;
+}
+
+.float:hover {
+text-decoration: none;
+color: #FFF;
+background-color:#1ab152; 
+animation: shake 1s;
+animation-iteration-count: infinite;
+}
+
+.my-float{
+	margin-top:16px;
+}
