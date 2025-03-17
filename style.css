@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+pop@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500..700&display=swap');
 
@@ -186,7 +186,7 @@ header{
         rgba(0,0,0,0.3),
         rgba(0,0,0,0.3)
     ) 
-    ,url(img/fondo.png);
+    ,url(img/fondo.jpg);
 }
 
 header .titulo h1{
