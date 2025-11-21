@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CataratasRides - Tu Aventura Comienza Aquí</title>
+  <link rel="icon" type="image/png" href="./img/Logo.png">
+  <link rel="shortcut icon" href="./img/Logo.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="./img/Logo.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#0a0a0a',
+              accent: '#3b82f6', // Blue-ish accent like trae/modern tech
+              purple: '#8b5cf6',
+            }
+          },
+          animation: {
+            'gradient-x': 'gradient-x 15s ease infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            'gradient-x': {
+              '0%, 100%': {
+                'background-size': '200% 200%',
+                'background-position': 'left center'
+              },
+              '50%': {
+                'background-size': '200% 200%',
+                'background-position': 'right center'
+              },
+            },
+            'float': {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .glass-nav {
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: gradient-x 5s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-brand-purple selection:text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 glass-nav border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="#" class="text-2xl font-bold tracking-tighter text-white">
+            Cataratas<span class="text-brand-accent">Rides</span>
+          </a>
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="#inicio"
+              class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Inicio</a>
+            <a href="#destinos"
+              class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Destinos</a>
+            <a href="#opiniones"
+              class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Opiniones</a>
+            <a href="#galeria"
+              class="hover:text-brand-accent transition-colors px-3 py-2 rounded-md text-sm font-medium">Galería</a>
+            <a href="#contacto"
+              class="bg-white text-black hover:bg-gray-200 transition-colors px-4 py-2 rounded-full text-sm font-bold">Reservar</a>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none">
+            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div class="hidden md:hidden bg-black/95 backdrop-blur-xl absolute w-full border-b border-white/10"
+      id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#inicio"
+          class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Inicio</a>
+        <a href="#destinos"
+          class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Destinos</a>
+        <a href="#opiniones"
+          class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Opiniones</a>
+        <a href="#galeria"
+          class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Galería</a>
+        <a href="#contacto" class="text-brand-accent font-bold block px-3 py-2 rounded-md text-base">Reservar Ahora</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <!-- Background Effects -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+      <div
+        class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/20 rounded-full blur-[120px] animate-float">
+      </div>
+      <div
+        class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px] animate-float"
+        style="animation-delay: 2s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div
+        class="inline-block px-4 py-1.5 mb-6 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-sm font-medium text-gray-300">
+        ✨ La mejor forma de viajar
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+        Descubre la magia de <br>
+        <span class="text-gradient">Las Cataratas</span>
+      </h1>
+      <p class="mt-4 text-xl text-gray-400 max-w-2xl mx-auto mb-10">
+        Experiencias premium de transporte y turismo en la triple frontera. Argentina, Brasil y Paraguay conectados por
+        la naturaleza.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#destinos"
+          class="px-8 py-4 rounded-full bg-white text-black font-bold text-lg hover:bg-gray-200 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+          Ver Destinos
+        </a>
+        <a href="#contacto"
+          class="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-sm text-white font-semibold text-lg hover:bg-white/10 transition-all">
+          Contactar
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-gray-500">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Destinations Section -->
+  <section id="destinos" class="py-24 bg-black relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Destinos</h2>
+        <p class="text-gray-400">Explora las maravillas de la triple frontera con nosotros.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Card Argentina -->
+        <div
+          class="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:border-brand-accent/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="h-64 overflow-hidden">
+            <img src="img/cat-igz.avif" alt="Cataratas Argentina"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-duration-500 transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-white">Argentina</h3>
+              <span class="text-2xl">🇦🇷</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Recorre el Parque Nacional Iguazú, Garganta del Diablo y senderos
+              únicos en la selva misionera.</p>
+            <a href="#"
+              class="inline-flex items-center text-brand-accent font-semibold hover:text-white transition-colors">
+              Ver más <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card Brasil -->
+        <div
+          class="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:border-brand-accent/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="h-64 overflow-hidden bg-gray-800">
+            <!-- Placeholder for Brazil -->
+            <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=800&auto=format&fit=crop"
+              alt="Cataratas Brasil"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-duration-500 transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-white">Brasil</h3>
+              <span class="text-2xl">🇧🇷</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Vistas panorámicas inigualables, Parque das Aves y la majestuosidad
+              del lado brasileño.</p>
+            <a href="#"
+              class="inline-flex items-center text-brand-accent font-semibold hover:text-white transition-colors">
+              Ver más <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card Paraguay -->
+        <div
+          class="group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 hover:border-brand-accent/50 transition-all duration-300 hover:-translate-y-2">
+          <div class="h-64 overflow-hidden bg-gray-800">
+            <!-- Placeholder for Paraguay -->
+            <img src="https://images.unsplash.com/photo-1574786198875-49f5d09ec2d2?q=80&w=800&auto=format&fit=crop"
+              alt="Paraguay"
+              class="w-full h-full object-cover transform group-hover:scale-110 transition-duration-500 transition-transform duration-700">
+          </div>
+          <div class="p-6">
+            <div class="flex items-center justify-between mb-2">
+              <h3 class="text-xl font-bold text-white">Paraguay</h3>
+              <span class="text-2xl">🇵🇾</span>
+            </div>
+            <p class="text-gray-400 text-sm mb-4">Compras en Ciudad del Este, Represa de Itaipú y los Saltos del Monday.
+            </p>
+            <a href="#"
+              class="inline-flex items-center text-brand-accent font-semibold hover:text-white transition-colors">
+              Ver más <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Reviews Section -->
+  <section id="opiniones" class="py-24 bg-[#050505] border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center mb-16">
+        <div class="flex items-center space-x-2 mb-4">
+          <span class="text-yellow-400 text-2xl">★★★★★</span>
+          <span class="text-white font-bold text-xl">5.0</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold text-center">Lo que dicen nuestros viajeros</h2>
+        <p class="text-gray-400 mt-2">Basado en reseñas de Google</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <div class="flex items-center mb-4">
+            <div
+              class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center font-bold text-white">
+              M
+            </div>
+            <div class="ml-3">
+              <h4 class="font-semibold text-white">María González</h4>
+              <span class="text-xs text-gray-400">Hace 2 días</span>
+            </div>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+          <p class="text-gray-300 text-sm">"Excelente servicio. El conductor fue muy puntual y amable. El auto estaba
+            impecable. ¡Súper recomendado para ir a las cataratas!"</p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center font-bold text-white mb-4">
+            J
+          </div>
+          <div class="flex items-center -mt-14 ml-14 mb-4">
+            <div>
+              <h4 class="font-semibold text-white">Juan Pérez</h4>
+              <span class="text-xs text-gray-400">Hace 1 semana</span>
+            </div>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+          <p class="text-gray-300 text-sm">"La mejor forma de cruzar a Brasil. Nos ayudaron con todos los trámites de
+            migración y nos esperaron. Muy profesionales."</p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <div
+            class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center font-bold text-white mb-4">
+            S
+          </div>
+          <div class="flex items-center -mt-14 ml-14 mb-4">
+            <div>
+              <h4 class="font-semibold text-white">Sarah Smith</h4>
+              <span class="text-xs text-gray-400">Hace 3 semanas</span>
+            </div>
+          </div>
+          <div class="text-yellow-400 text-sm mb-3">★★★★★</div>
+          <p class="text-gray-300 text-sm">"Great experience! Safe driving and very comfortable car. The driver spoke
+            English which was very helpful."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="galeria" class="py-24 bg-black relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Galería de Momentos</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
+        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden relative group">
+          <img src="img/cat-igz.avif" alt="Gallery 1"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+          <div
+            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="text-white font-bold">Garganta del Diablo</span>
+          </div>
+        </div>
+        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group">
+          <img src="https://images.unsplash.com/photo-1534234828563-0253171e5e3a?q=80&w=400&auto=format&fit=crop"
+            alt="Gallery 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="col-span-1 row-span-2 rounded-2xl overflow-hidden relative group">
+          <img src="https://images.unsplash.com/photo-1583266640306-745382685303?q=80&w=400&auto=format&fit=crop"
+            alt="Gallery 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+        <div class="col-span-1 row-span-1 rounded-2xl overflow-hidden relative group">
+          <img src="https://images.unsplash.com/photo-1518182170546-07661fd94144?q=80&w=400&auto=format&fit=crop"
+            alt="Gallery 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a0a] border-t border-white/10 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div class="col-span-1 md:col-span-2">
+          <a href="#" class="text-2xl font-bold tracking-tighter text-white mb-4 block">
+            Cataratas<span class="text-brand-accent">Rides</span>
+          </a>
+          <p class="text-gray-400 max-w-sm">
+            Tu compañero de confianza para explorar las maravillas naturales de Iguazú y sus alrededores. Seguridad,
+            confort y puntualidad.
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Enlaces Rápidos</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#inicio" class="hover:text-brand-accent transition-colors">Inicio</a></li>
+            <li><a href="#destinos" class="hover:text-brand-accent transition-colors">Destinos</a></li>
+            <li><a href="#opiniones" class="hover:text-brand-accent transition-colors">Opiniones</a></li>
+            <li><a href="#contacto" class="hover:text-brand-accent transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contacto</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-center"><i class="fa-solid fa-phone mr-2"></i> +5493757549647</li>
+            <li class="flex items-center"><i class="fa-solid fa-envelope mr-2"></i> pablo.da.ber@gmail.com</li>
+            <li class="flex items-center"><i class="fa-solid fa-location-dot mr-2"></i> Puerto Iguazú, Misiones</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-500 text-sm">© 2024 CataratasRides. Todos los derechos reservados.</p>
+        <div class="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" class="text-gray-500 hover:text-white transition-colors">Instagram</a>
+          <a href="#" class="text-gray-500 hover:text-white transition-colors">Facebook</a>
+          <a href="#" class="text-gray-500 hover:text-white transition-colors">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple scroll reveal effect
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+            entry.target.classList.remove('opacity-0', 'translate-y-10');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('section > div').forEach(el => {
+        el.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+
+</html>
